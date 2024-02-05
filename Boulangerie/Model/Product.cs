@@ -23,7 +23,7 @@ namespace Boulangerie.Model
         private string name;
         private string? description;
         private int maxThreshold;
-        private int minThreshold = 10;
+        public static int minThreshold = 10;
         
         public int Id { get; set; }
         public string Name {
@@ -68,9 +68,46 @@ namespace Boulangerie.Model
             Description = description;
         }
 
+
+        //surcharge de methodes
+        public void IncreaseAmountInStock()
+        {
+            this.AmountInStock++;       
+        }
+
+        public bool IncreaseAmountInStock(int amount)
+        {
+            if(AmountInStock + amount > maxThreshold)
+                return false;
+            else
+            {
+                this.AmountInStock += amount;
+                return true;
+            }
+            
+        }
+
+        public void DecreaseAmountInStock()
+        {
+            this.AmountInStock--;
+        }
+
+        public bool DecreaseAmountInStock(int amount)
+        {
+            if (AmountInStock - amount < 0)
+                return false;
+            else
+            {
+                this.AmountInStock -= amount;
+                return true;
+            }
+        }
+
+
+
         public override string ToString()
         {
-            return ($"Produit : {this.Name} --- Quantité : {this.AmountInStock} {this.UnitType}  --- Prix : {this.UnitPrice.ItemPrice} {this.UnitPrice.Currency}");
+            return ($"{this.Id}. Produit : {this.Name} --- Quantité : {this.AmountInStock} {this.UnitType}  --- Prix : {this.UnitPrice.ItemPrice} {this.UnitPrice.Currency}");
         }
 
 
