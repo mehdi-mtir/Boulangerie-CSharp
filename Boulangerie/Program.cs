@@ -4,4 +4,4 @@ using Boulangerie;
 
 Utilities.InitializeStock();
 
-Utilities.ShowStock();
+Utilities.ShowMenu();

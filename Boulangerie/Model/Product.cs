@@ -68,6 +68,11 @@ namespace Boulangerie.Model
             Description = description;
         }
 
+        public override string ToString()
+        {
+            return ($"Produit : {this.Name} --- Quantité : {this.AmountInStock} {this.UnitType}  --- Prix : {this.UnitPrice.ItemPrice} {this.UnitPrice.Currency}");
+        }
+
 
 
 
