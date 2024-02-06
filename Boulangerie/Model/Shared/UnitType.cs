@@ -8,8 +8,8 @@ namespace Boulangerie.Model.Shared
 {
     public enum UnitType
     {
-        PerItem,
-        PerKg,
-        PerBox
+        Item,
+        Kg,
+        Box
     }
 }

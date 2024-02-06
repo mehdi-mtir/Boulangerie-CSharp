@@ -1,4 +1,4 @@
-﻿using Boulangerie.Model.Product;
+﻿using Boulangerie.Model.ProductManagement;
 using Boulangerie.Model.Shared;
 using System;
 using System.Collections.Generic;

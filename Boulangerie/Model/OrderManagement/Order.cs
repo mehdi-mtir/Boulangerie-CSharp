@@ -12,7 +12,7 @@ namespace Boulangerie.Model.OrderManagement
         public int Id { get; set; }
         private static int lastId = 0;
         public DateTime OrderDate { get; private set; }
-        public List<OrderItem> OrderItems { get; }
+        public List<OrderItem> OrderItems { get; private set; }
 
         public Order() {
             Id = ++lastId;
