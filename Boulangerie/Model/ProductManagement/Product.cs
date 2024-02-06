@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Boulangerie.Model.Shared;
 
-namespace Boulangerie.Model.Product
+namespace Boulangerie.Model.ProductManagement
 {
     public class Product
     {
