@@ -24,5 +24,10 @@ namespace Boulangerie.Model.OrderMangement
             Amount = amount;
             Price = price;
         }
+
+        public override string ToString()
+        {
+            return $"Produit : {Product.Name} -- Quantité : {Amount} {Product.UnitType} -- Prix Unitaire : {Product.UnitPrice.ItemPrice} {Product.UnitPrice.Currency}";
+        }
     }
 }

@@ -16,9 +16,9 @@ namespace Boulangerie.Services
         
 
         public ProductManager() {
-            Product p1 = new Product(1, "Sucre", new Price(1.4, Currency.Euro), UnitType.PerKg, 50, 20, "Sucre en poudre");
-            Product p2 = new Product(2, "Farine", new Price(2.45, Currency.Euro), UnitType.PerKg, 100, 25, "Farine T55");
-            Product p3 = new Product(3, "Oeufs", new Price(2.5, Currency.Euro), UnitType.PerBox, 40, 15, "OEUF biologique France barq. de 6");
+            Product p1 = new Product(1, "Sucre", new Price(1.4, Currency.Euro), UnitType.Kg, 50, 20, "Sucre en poudre");
+            Product p2 = new Product(2, "Farine", new Price(2.45, Currency.Euro), UnitType.Kg, 100, 25, "Farine T55");
+            Product p3 = new Product(3, "Oeufs", new Price(2.5, Currency.Euro), UnitType.Box, 40, 15, "OEUF biologique France barq. de 6");
             stock.Add(p1);
             stock.Add(p2);
             stock.Add(p3);
@@ -96,7 +96,7 @@ namespace Boulangerie.Services
             Price price = new Price(value, currency);
 
             //Récupérer l'unité
-            var unitType = UnitType.PerItem;
+            var unitType = UnitType.Item;
             if (Enum.TryParse(GetProperty("Unité de mesure : PerItem, PerKg ou PerBox"), out UnitType unitTypeInput))
                 unitType = unitTypeInput;
 
@@ -153,5 +153,4 @@ namespace Boulangerie.Services
     }
 
 
-}
 }

@@ -31,6 +31,17 @@ namespace Boulangerie.Model.OrderManagement
             OrderItems.Add( item );
         }
 
+        public override string ToString()
+        {
+            string display = $"\nOrdre : {this.Id} -- Commandé le : {this.OrderDate.ToString()} \n";
+            foreach (var item in OrderItems)
+            {
+                display += "\t" + item.ToString() + "\n";
+            }
+
+            return display;
+        }
+
 
     }
 }

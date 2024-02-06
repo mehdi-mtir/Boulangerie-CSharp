@@ -33,7 +33,7 @@ namespace Boulangerie.Services
                 Console.WriteLine("Voulez-vous terminer votre commande? oui, non");
             } while (Console.ReadLine().ToLower() != "oui");
 
-
+            orders.Add(order);
         }
 
         private OrderItem addOrderItem()
@@ -50,6 +50,19 @@ namespace Boulangerie.Services
             Console.WriteLine($"L'ajout de {amount} {product.UnitType} de {product.Name} est effactué avec succès!");
             return newOrderItem;
 
+        }
+
+        public void ShowOrders()
+        {
+            Console.Clear();
+            Console.WriteLine("******************************");
+            Console.WriteLine("***Historique des commandes***");
+            Console.WriteLine("******************************");
+
+            foreach (var order in orders)
+            {
+                Console.WriteLine(order.ToString());
+            }
         }
 
 

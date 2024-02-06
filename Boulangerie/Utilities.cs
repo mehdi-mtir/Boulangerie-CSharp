@@ -12,9 +12,10 @@ namespace Boulangerie
     {
         private static string choice = string.Empty;
         public static ProductManager productManger;
-        public static OrderManager orderManager;  
+        public static OrderManager orderManager;
 
-        public static void InitializeStock() {
+        public static void InitializeStock()
+        {
             productManger = new ProductManager();
             orderManager = new OrderManager();
         }
@@ -35,10 +36,11 @@ namespace Boulangerie
                 Console.WriteLine("4. Diminuer le stock");
                 Console.WriteLine("5. Afficher les produits en risque de rupture de stock");
                 Console.WriteLine("6. Passer une commande.");
+                Console.WriteLine("7. Afficher l'historique des commandes");
 
                 choice = Console.ReadLine();
 
-            } while (choice != "1" && choice != "2" && choice != "3" && choice != "4" && choice != "5" && choice != "6");
+            } while (choice != "1" && choice != "2" && choice != "3" && choice != "4" && choice != "5" && choice != "6" && choice != "7");
 
             switch (choice)
             {
@@ -47,7 +49,8 @@ namespace Boulangerie
                 case "3": productManger.ChangeStockAmount("increase"); BackToMenu(); break;
                 case "4": productManger.ChangeStockAmount("decrease"); BackToMenu(); break;
                 case "5": productManger.ShowLowStockProducts(); BackToMenu(); break;
-                case "6": orderManager.CreateNewOrder(); BackToMenu(); break;   
+                case "6": orderManager.CreateNewOrder(); BackToMenu(); break;
+                case "7": orderManager.ShowOrders(); BackToMenu(); break;
             }
         }
 
@@ -59,3 +62,4 @@ namespace Boulangerie
         }
 
     }
+}
