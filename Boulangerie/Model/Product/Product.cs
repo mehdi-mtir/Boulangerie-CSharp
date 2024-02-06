@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Boulangerie.Model.Shared;
 
-namespace Boulangerie.Model
+namespace Boulangerie.Model.Product
 {
     public class Product
     {
@@ -24,27 +25,30 @@ namespace Boulangerie.Model
         private string? description;
         private int maxThreshold;
         public static int minThreshold = 10;
-        
+
         public int Id { get; set; }
-        public string Name {
+        public string Name
+        {
             get { return name; }
-            set { name = value.Length > 50 ? value[..50] : value; } 
+            set { name = value.Length > 50 ? value[..50] : value; }
         }
-        public string? Description {
+        public string? Description
+        {
             get { return description; }
-            set {
-                if(value == null)
+            set
+            {
+                if (value == null)
                     description = string.Empty;
                 else
                     description = value.Length > 250 ? value[..250] : value;
-            } 
+            }
         }
         public UnitType UnitType { get; set; }
         public int AmountInStock { get; private set; }
 
         public Price UnitPrice { get; set; }
 
-        
+
         //Surcharge de constructeurs
         public Product()
         {
@@ -52,14 +56,15 @@ namespace Boulangerie.Model
             AmountInStock = 0;
             Name = string.Empty;
         }
-        
-        public Product(int id) : this() {
-            this.Id = id;
+
+        public Product(int id) : this()
+        {
+            Id = id;
         }
 
         public Product(int id, string name, Price price, UnitType unitType, int maxThreshold, int amountInStock, string? description)
         {
-            Id  = id;
+            Id = id;
             Name = name;
             UnitPrice = price;
             UnitType = unitType;
@@ -72,24 +77,24 @@ namespace Boulangerie.Model
         //surcharge de methodes
         public void IncreaseAmountInStock()
         {
-            this.AmountInStock++;       
+            AmountInStock++;
         }
 
         public bool IncreaseAmountInStock(int amount)
         {
-            if(AmountInStock + amount > maxThreshold)
+            if (AmountInStock + amount > maxThreshold)
                 return false;
             else
             {
-                this.AmountInStock += amount;
+                AmountInStock += amount;
                 return true;
             }
-            
+
         }
 
         public void DecreaseAmountInStock()
         {
-            this.AmountInStock--;
+            AmountInStock--;
         }
 
         public bool DecreaseAmountInStock(int amount)
@@ -98,7 +103,7 @@ namespace Boulangerie.Model
                 return false;
             else
             {
-                this.AmountInStock -= amount;
+                AmountInStock -= amount;
                 return true;
             }
         }
@@ -107,7 +112,7 @@ namespace Boulangerie.Model
 
         public override string ToString()
         {
-            return ($"{this.Id}. Produit : {this.Name} --- Quantité : {this.AmountInStock} {this.UnitType}  --- Prix : {this.UnitPrice.ItemPrice} {this.UnitPrice.Currency}");
+            return $"{Id}. Produit : {Name} --- Quantité : {AmountInStock} {UnitType}  --- Prix : {UnitPrice.ItemPrice} {UnitPrice.Currency}";
         }
 
 

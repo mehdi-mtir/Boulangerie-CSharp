@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boulangerie.Model
+namespace Boulangerie.Model.Shared
 {
-    public enum Currency
+    public enum UnitType
     {
-        Euro,
-        Dollar,
-        Pound
+        PerItem,
+        PerKg,
+        PerBox
     }
 }

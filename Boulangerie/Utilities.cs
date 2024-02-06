@@ -39,9 +39,9 @@ namespace Boulangerie
 
             switch (choice)
             {
-                case "1": productManger.ShowStock(); BackToMenu() break;
-                case "2": productManger.AddNewProduct(); BackToMenu() break;
-                case "3": productManger.ChangeStockAmount("increase"); BackToMenu() break;
+                case "1": productManger.ShowStock(); BackToMenu(); break;
+                case "2": productManger.AddNewProduct(); BackToMenu(); break;
+                case "3": productManger.ChangeStockAmount("increase"); BackToMenu(); break;
                 case "4": productManger.ChangeStockAmount("decrease"); BackToMenu(); break;
                 case "5": productManger.ShowLowStockProducts(); BackToMenu(); break;
             }

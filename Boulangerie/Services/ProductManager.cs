@@ -1,4 +1,5 @@
-﻿using Boulangerie.Model;
+﻿using Boulangerie.Model.Product;
+using Boulangerie.Model.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace Boulangerie.Services
 {
     //private static List<Product> stock = new List<Product>();
-    
+
     public class ProductManager
     {
         private List<Product> stock = new();
