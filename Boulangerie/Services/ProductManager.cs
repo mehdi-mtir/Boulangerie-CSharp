@@ -13,7 +13,8 @@ namespace Boulangerie.Services
     public class ProductManager
     {
         private List<Product> stock = new();
-        
+        //public List<Product> Stock { get; set; }
+
 
         public ProductManager() {
             Product p1 = new Product(1, "Sucre", new Price(1.4, Currency.Euro), UnitType.Kg, 50, 20, "Sucre en poudre");
@@ -23,6 +24,11 @@ namespace Boulangerie.Services
             stock.Add(p2);
             stock.Add(p3);
         }
+
+        public List<Product> GetStock() {  return stock; }
+        public void SetStock(List<Product> products) { stock = products; }
+
+
 
         public void ShowLowStockProducts()
         {

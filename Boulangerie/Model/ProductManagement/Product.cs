@@ -43,9 +43,10 @@ namespace Boulangerie.Model.ProductManagement
                     description = value.Length > 250 ? value[..250] : value;
             }
         }
-        public UnitType UnitType { get; set; }
-        public int AmountInStock { get; private set; }
+        public int MaxThreshold { get; set; }
 
+        public UnitType UnitType { get; set; }
+        public int AmountInStock { get; set; }
         public Price UnitPrice { get; set; }
 
 
